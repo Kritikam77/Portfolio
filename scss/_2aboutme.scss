@@ -1,0 +1,109 @@
+.about-me-page{
+    background-color: $bgcolor1;
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 5% 45% 45% 5%;
+    grid-template-rows: 3rem 1fr 2fr 3rem;
+    grid-template-areas: 
+                        ". . . ."
+                        ". heading heading ."
+                        ". info info ."
+                        ". . . .";
+}
+
+
+#canvas1{
+  //  background-color: pink;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    grid-row: 1/5;
+    grid-column: 1/5;
+}
+
+.heading{
+    grid-area: heading;
+    justify-self: center;
+    z-index: 3;
+    align-self: center;
+    padding: 1rem;
+    margin: 0rem;
+
+    
+    span{
+        &:first-child{
+            color: $main1;
+            font-size: 6rem;
+            text-shadow: $main2 .2rem .2rem;
+        }
+        font-family: 'Kbdunktank';
+        display: inline-block;
+        font-weight: 200;
+        font-size: 3rem;
+        color: white;
+        margin: 0;
+        padding: 0;
+
+    }
+}
+
+.info{
+    grid-area: info;
+    font-size: 1.3rem;
+    color: white;
+    display: grid;
+    z-index: 3;
+    grid-template-columns:2rem 50% 50% 2rem;
+    grid-template-areas:". info1  info2" ;
+
+    span{
+        color: $main2;
+        text-shadow: black .1rem -.1rem ;
+        background-color: $main1;
+        padding: .2rem;
+        border-radius: 20%;
+
+    }
+
+    &1{
+        grid-area: info1;
+
+        div{
+            padding: .5rem;
+        }
+    }
+    &2{
+        grid-area: info2;
+        div{
+            padding: .5rem;
+        }
+    }
+
+    div{
+        div{
+            display: inline-block;
+            background-image: linear-gradient(black,rgba(0,0,0,.3));
+            padding: .5rem;
+            margin: .5rem;
+            border-radius: 15%;
+        }
+    }
+}
+
+.click-me{
+    text-decoration: none;
+    display: inline-block;
+    &:visited,&:active,a{
+        color: $main2;
+        text-shadow: black .1rem -.1rem ;
+        background-color: $main1;
+        padding: .2rem;
+        border-radius: 20%;
+
+       
+    }
+    &:hover{
+        transform: scale(1.05) translateY(-.2rem);}
+}

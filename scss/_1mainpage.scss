@@ -1,0 +1,261 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family:Kbdunktank;
+    src: url("../fonts/Kbdunktank.ttf") format("truetype");
+}
+
+@font-face {
+    font-family:Kbzipadeedoodah;
+    src: url("../fonts/Kbzipadeedoodah.ttf") format('truetype');
+}
+
+@font-face {
+    font-family:DKJambo;
+    src: url("../fonts/DKJambo.otf") format('opentype');
+}
+
+
+.main{
+    background-color: $bgcolor1;
+    display: grid;
+    grid-template-columns:2rem 1fr 5rem 1.2fr 2rem;
+    grid-template-rows:5% 20% 20% 20% 20% 10% 5%;
+    grid-template-areas: 
+                        ". . . . ."
+                        ". . . top-head ."
+                        ". menu . h1-main ."
+                        ". menu . h1-main ."
+                        ". menu . h1-main ."
+                        ". . . bottom-head . "
+                        ". . . . ."
+                        ;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+
+    }
+
+.bg{
+    grid-column: 2/3;
+    grid-row: 2/7;
+    filter: drop-shadow(.5rem .5rem .5rem rgba(0,0,0,1));       
+}
+
+@keyframes bigsmall{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.02);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.bg2{
+    height: 100%;
+    width: 100%;
+    background-color:$bgcolor2;
+    clip-path: circle(40% at 50% 50%);
+    z-index: 1;
+    -webkit-animation: bigsmall 2s linear infinite;
+    -moz-animation: bigsmall 2s linear infinite;
+    -ms-animation: bigsmall 2s linear infinite;
+    -o-animation: bigsmall 2s linear infinite;
+    animation: bigsmall 2s linear infinite;
+}
+
+
+
+
+
+.top-head{
+    grid-area: top-head;
+    font-size: 1rem;
+    z-index: 3;
+    font-family: DKJambo;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    color: grey;
+    justify-self: center;
+
+    span{
+        font-size: 2rem;
+        display: inline-block;
+        padding: 0.5rem;
+        margin: 0;
+        transform: translateX(-3rem);
+      //  float: left;
+        color: white;
+    }
+}
+
+.bottom-head{
+    grid-area: bottom-head;
+    z-index: 3;
+    justify-self: center;
+    font-family: DKJambo;
+    font-size: 1rem;
+    color: grey;    
+}
+
+
+.h1-main{
+    z-index: 3;
+    grid-area: h1-main;
+    justify-self: center;
+    align-self: center;
+    padding: 1rem;
+    margin: 0rem;
+
+    
+    span{
+        &:first-child{
+            color: $main1;
+            font-size: 9rem;
+            text-shadow: $main2 .2rem .2rem;
+        }
+        font-family: 'Kbdunktank';
+        display: inline-block;
+        font-weight: 200;
+        font-size: 5rem;
+        color: white;
+        margin: 0;
+        padding: 0;
+
+    }
+}
+
+.title-hover{
+    cursor: pointer;
+    font-family:'Kbzipadeedoodah';
+    animation: animate1 .7s linear;
+    
+}
+
+@keyframes animate1{
+    0%{
+        transform: translateY(-2rem);
+    }
+
+    100%{
+        transform: translateY(0rem);
+    }
+}
+
+.menu{
+    grid-area: menu;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 4rem;
+    align-self: center;
+    justify-items: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns:2rem repeat(4,1fr) 2rem;
+    grid-template-rows: repeat(4,1fr);
+    grid-template-areas: 
+                        ". . contact contact . ."
+                        ". about-me . . skills ."
+                        ". about-me click-info click-info skills ."
+                        ". . projects projects . .";
+
+}
+
+.icon{
+    background-image: linear-gradient($main1 45%,$main2);
+    border-radius: 50%;
+    perspective: 150rem;
+    box-shadow: black .5rem 1rem 1rem ;
+    a{
+        text-decoration: none;
+        img{
+            height: 3rem;
+            width: auto;
+            padding: .6rem;
+            &:hover{
+                cursor:pointer;
+                border-radius: 50%;
+                box-shadow: white .2rem .2rem 1rem ;
+            }
+        }
+    }
+}
+
+.about-me{
+    grid-area: about-me;
+}
+
+.contact{
+    grid-area: contact;
+}
+
+.skills{
+    grid-area: skills;
+}
+
+.projects{
+    grid-area: projects;
+}
+
+@keyframes animate3{
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.5);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+.click-info{
+    grid-area: click-info;
+    align-self: start;
+    a{
+        font-family: 'Kbdunktank';
+        text-decoration: none;
+        font-size: 2rem;
+        color: white;
+        text-shadow: black .3rem .3rem;
+
+        &:hover{
+            cursor: pointer;
+            color:orange;
+            display: inline-block;
+            text-shadow: white .15rem .15rem;
+            transition: all 1s;
+            -webkit-animation: animate3 1s linear infinite;
+            -moz-animation: animate3 1s linear infinite;
+            -ms-animation: animate3 1s linear infinite;
+            -o-animation: animate3 1s linear infinite;
+            animation: animate3 1s linear infinite;
+    }
+    }
+}
+
+  
+
+.AM, .CM , .pro , .skl{
+    display: none;
+    &:hover{
+        cursor: pointer;
+    }
+    
+}
+
+
+

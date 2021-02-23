@@ -1,0 +1,14 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "my resume",
+  "main": "script.js",
+  "scripts": {
+    "test:scss": "node-sass scss/main.scss css/style.css -w"
+  },
+  "author": "Kritika",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}

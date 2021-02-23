@@ -1,0 +1,411 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  overflow: hidden; }
+
+@font-face {
+  font-family: Kbdunktank;
+  src: url("../fonts/Kbdunktank.ttf") format("truetype"); }
+
+@font-face {
+  font-family: Kbzipadeedoodah;
+  src: url("../fonts/Kbzipadeedoodah.ttf") format("truetype"); }
+
+@font-face {
+  font-family: DKJambo;
+  src: url("../fonts/DKJambo.otf") format("opentype"); }
+
+.main {
+  background-color: #242323;
+  display: grid;
+  grid-template-columns: 2rem 1fr 5rem 1.2fr 2rem;
+  grid-template-rows: 5% 20% 20% 20% 20% 10% 5%;
+  grid-template-areas: ". . . . ." ". . . top-head ." ". menu . h1-main ." ". menu . h1-main ." ". menu . h1-main ." ". . . bottom-head . " ". . . . .";
+  height: 100vh;
+  width: 100vw;
+  position: relative; }
+
+.bg {
+  grid-column: 2/3;
+  grid-row: 2/7;
+  filter: drop-shadow(0.5rem 0.5rem 0.5rem black); }
+
+@keyframes bigsmall {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.02); }
+  100% {
+    transform: scale(1); } }
+
+.bg2 {
+  height: 100%;
+  width: 100%;
+  background-color: #1a1919;
+  clip-path: circle(40% at 50% 50%);
+  z-index: 1;
+  -webkit-animation: bigsmall 2s linear infinite;
+  -moz-animation: bigsmall 2s linear infinite;
+  -ms-animation: bigsmall 2s linear infinite;
+  -o-animation: bigsmall 2s linear infinite;
+  animation: bigsmall 2s linear infinite; }
+
+.top-head {
+  grid-area: top-head;
+  font-size: 1rem;
+  z-index: 3;
+  font-family: DKJambo;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  color: grey;
+  justify-self: center; }
+  .top-head span {
+    font-size: 2rem;
+    display: inline-block;
+    padding: 0.5rem;
+    margin: 0;
+    transform: translateX(-3rem);
+    color: white; }
+
+.bottom-head {
+  grid-area: bottom-head;
+  z-index: 3;
+  justify-self: center;
+  font-family: DKJambo;
+  font-size: 1rem;
+  color: grey; }
+
+.h1-main {
+  z-index: 3;
+  grid-area: h1-main;
+  justify-self: center;
+  align-self: center;
+  padding: 1rem;
+  margin: 0rem; }
+  .h1-main span {
+    font-family: 'Kbdunktank';
+    display: inline-block;
+    font-weight: 200;
+    font-size: 5rem;
+    color: white;
+    margin: 0;
+    padding: 0; }
+    .h1-main span:first-child {
+      color: #4c5699;
+      font-size: 9rem;
+      text-shadow: #9acd32 0.2rem 0.2rem; }
+
+.title-hover {
+  cursor: pointer;
+  font-family: 'Kbzipadeedoodah';
+  animation: animate1 .7s linear; }
+
+@keyframes animate1 {
+  0% {
+    transform: translateY(-2rem); }
+  100% {
+    transform: translateY(0rem); } }
+
+.menu {
+  grid-area: menu;
+  z-index: 3;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 4rem;
+  align-self: center;
+  justify-items: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 2rem repeat(4, 1fr) 2rem;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: ". . contact contact . ." ". about-me . . skills ." ". about-me click-info click-info skills ." ". . projects projects . ."; }
+
+.icon {
+  background-image: linear-gradient(#4c5699 45%, #9acd32);
+  border-radius: 50%;
+  perspective: 150rem;
+  box-shadow: black .5rem 1rem 1rem; }
+  .icon a {
+    text-decoration: none; }
+    .icon a img {
+      height: 3rem;
+      width: auto;
+      padding: .6rem; }
+      .icon a img:hover {
+        cursor: pointer;
+        border-radius: 50%;
+        box-shadow: white .2rem .2rem 1rem; }
+
+.about-me {
+  grid-area: about-me; }
+
+.contact {
+  grid-area: contact; }
+
+.skills {
+  grid-area: skills; }
+
+.projects {
+  grid-area: projects; }
+
+@keyframes animate3 {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(1.5); }
+  100% {
+    transform: scale(1); } }
+
+.click-info {
+  grid-area: click-info;
+  align-self: start; }
+  .click-info a {
+    font-family: 'Kbdunktank';
+    text-decoration: none;
+    font-size: 2rem;
+    color: white;
+    text-shadow: black .3rem .3rem; }
+    .click-info a:hover {
+      cursor: pointer;
+      color: orange;
+      display: inline-block;
+      text-shadow: white .15rem .15rem;
+      transition: all 1s;
+      -webkit-animation: animate3 1s linear infinite;
+      -moz-animation: animate3 1s linear infinite;
+      -ms-animation: animate3 1s linear infinite;
+      -o-animation: animate3 1s linear infinite;
+      animation: animate3 1s linear infinite; }
+
+.AM, .CM, .pro, .skl {
+  display: none; }
+  .AM:hover, .CM:hover, .pro:hover, .skl:hover {
+    cursor: pointer; }
+
+.about-me-page {
+  background-color: #242323;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 5% 45% 45% 5%;
+  grid-template-rows: 3rem 1fr 2fr 3rem;
+  grid-template-areas: ". . . ." ". heading heading ." ". info info ." ". . . ."; }
+
+#canvas1 {
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  grid-row: 1/5;
+  grid-column: 1/5; }
+
+.heading {
+  grid-area: heading;
+  justify-self: center;
+  z-index: 3;
+  align-self: center;
+  padding: 1rem;
+  margin: 0rem; }
+  .heading span {
+    font-family: 'Kbdunktank';
+    display: inline-block;
+    font-weight: 200;
+    font-size: 3rem;
+    color: white;
+    margin: 0;
+    padding: 0; }
+    .heading span:first-child {
+      color: #4c5699;
+      font-size: 6rem;
+      text-shadow: #9acd32 0.2rem 0.2rem; }
+
+.info {
+  grid-area: info;
+  font-size: 1.3rem;
+  color: white;
+  display: grid;
+  z-index: 3;
+  grid-template-columns: 2rem 50% 50% 2rem;
+  grid-template-areas: ". info1  info2"; }
+  .info span {
+    color: #9acd32;
+    text-shadow: black .1rem -.1rem;
+    background-color: #4c5699;
+    padding: .2rem;
+    border-radius: 20%; }
+  .info1 {
+    grid-area: info1; }
+    .info1 div {
+      padding: .5rem; }
+  .info2 {
+    grid-area: info2; }
+    .info2 div {
+      padding: .5rem; }
+  .info div div {
+    display: inline-block;
+    background-image: linear-gradient(black, rgba(0, 0, 0, 0.3));
+    padding: .5rem;
+    margin: .5rem;
+    border-radius: 15%; }
+
+.click-me {
+  text-decoration: none;
+  display: inline-block; }
+  .click-me:visited, .click-me:active, .click-me a {
+    color: #9acd32;
+    text-shadow: black .1rem -.1rem;
+    background-color: #4c5699;
+    padding: .2rem;
+    border-radius: 20%; }
+  .click-me:hover {
+    transform: scale(1.05) translateY(-0.2rem); }
+
+.projects-page {
+  display: grid;
+  background-color: black;
+  min-height: 100vh;
+  height: auto;
+  width: 100%;
+  grid-template-columns: 15% 70% 15%;
+  grid-template-rows: 3rem 1fr 1fr;
+  grid-template-areas: ". . ." ". heading4 ." "list list list"; }
+
+#canvas2 {
+  grid-column: 1/4;
+  grid-row: 1/4;
+  z-index: 1; }
+
+.heading4 {
+  grid-area: heading4;
+  z-index: 2;
+  justify-self: center;
+  align-self: center;
+  padding: 1rem;
+  margin: 0rem; }
+  .heading4 span {
+    font-family: 'Kbdunktank';
+    display: inline-block;
+    font-weight: 200;
+    font-size: 3rem;
+    color: white;
+    margin: 0;
+    padding: 0; }
+    .heading4 span:first-child {
+      color: #4c5699;
+      font-size: 6rem;
+      text-shadow: #9acd32 0.2rem 0.2rem; }
+
+.project-list {
+  grid-area: list;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "themes website"; }
+  .project-list1 {
+    grid-area: themes; }
+  .project-list2 {
+    grid-area: website; }
+  .project-list div a {
+    color: #4c5699;
+    font-family: Kbdunktank;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 3rem;
+    text-shadow: white .1rem .1rem 0rem;
+    padding: .7rem;
+    box-shadow: inset 0 0 0 0 #4c5699;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s; }
+    .project-list div a:hover {
+      border-radius: 30%;
+      color: #9acd32;
+      box-shadow: inset 12rem 0 0 0 #4c5699;
+      font-family: Kbzipadeedoodah; }
+
+.contactme {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  display: grid;
+  grid-template-columns: 5rem 2fr 5rem 1fr 1fr 5rem;
+  grid-template-rows: 5rem 1fr 1fr 5rem;
+  grid-template-areas: ". . . . . ." ". heading5 . contact-list contact-name ." ". lecture . contact-list contact-name ." ". . . . . ."; }
+
+#canvas5 {
+  z-index: 1; }
+
+.heading5 {
+  grid-area: heading5;
+  z-index: 2;
+  color: white;
+  z-index: 2;
+  justify-self: center;
+  align-self: center;
+  padding: 1rem;
+  margin: 0rem; }
+  .heading5 span {
+    font-family: 'Kbdunktank';
+    display: inline-block;
+    font-weight: 200;
+    font-size: 3rem;
+    color: white;
+    margin: 0;
+    padding: 0; }
+    .heading5 span:first-child {
+      color: #4c5699;
+      font-size: 6rem;
+      text-shadow: #9acd32 0.2rem 0.2rem; }
+
+.lecture {
+  z-index: 2;
+  grid-area: lecture;
+  color: white;
+  font-size: 1.3rem;
+  word-spacing: 5;
+  letter-spacing: 3;
+  font-family: Kbdunktank; }
+
+.contact-list {
+  grid-area: contact-list;
+  z-index: 2;
+  justify-self: center;
+  align-self: center; }
+  .contact-list div img {
+    display: inline;
+    height: 3.5rem;
+    margin: 1.5rem; }
+    .contact-list div img:hover {
+      cursor: pointer; }
+
+.contact-name {
+  grid-area: contact-name;
+  z-index: 2; }
+
+.whatsapp-name, .snapchat-name, .insta-name, .email-name {
+  display: none;
+  font-size: 1.5rem;
+  padding: 1.2rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-family: Kbdunktank;
+  color: white; }
+
+.add-to-hover {
+  cursor: pointer;
+  display: inline-block;
+  -webkit-animation: animate5 1s linear forwards;
+  -moz-animation: animate5 1s linear forwards;
+  -ms-animation: animate5 1s linear forwards;
+  -o-animation: animate5 1s linear forwards;
+  animation: animate5 1s linear forwards; }
+
+@keyframes animate5 {
+  0% {
+    transform: translate(10rem); }
+  100% {
+    transform: translate(-4rem); } }
