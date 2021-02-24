@@ -3,7 +3,7 @@ body{
     margin: 0;
     padding: 0;
     font-size: 62.5%;
-    overflow: hidden;
+    overflow: auto;
 }
 
 @font-face {
@@ -40,12 +40,57 @@ body{
     width: 100vw;
     position: relative;
 
+
+    @media (max-width:$bp2){
+        grid-template-columns:1rem 1fr 0rem 1.2fr 1rem;
     }
+    @media (max-width:$bp3) {
+        grid-template-columns:0rem 1fr 0rem 1.2fr 0rem;
+    }
+    @media (max-width:$bp5) {
+        grid-template-columns:0rem 1fr 0rem 1.2fr 0rem;
+    }
+    @media (max-width:$bp5) {
+        height: auto;
+        grid-template-columns:5% 1fr 5%;
+        grid-template-rows:2rem 3fr 5rem 5rem 1fr 2fr 1fr;
+        grid-template-areas: 
+                        ". . . "
+                        ". menu ."
+                        ". . ."
+                        ". . ."
+                        ". top-head ."
+                        ". h1-main  ."
+                        ". bottom-head ."
+                        ;
+    }
+    
+
+}
 
 .bg{
     grid-column: 2/3;
     grid-row: 2/7;
-    filter: drop-shadow(.5rem .5rem .5rem rgba(0,0,0,1));       
+    filter: drop-shadow(.5rem .5rem .5rem rgba(0,0,0,1));  
+    
+    @media (max-width:$bp3){
+        height: 90%;
+        width: 90%;
+        transform: translate(1rem,2rem);
+    }
+    @media (max-width:$bp4){
+        height: 80%;
+        width: 80%;
+        transform: translate(2rem,3.5rem);
+    }
+    @media (max-width:$bp5){
+        margin: 2rem;
+        height: 100%;
+        width: auto;
+        transform: translate(0rem,-1rem);
+        grid-column: 2/3;
+        grid-row: 2/4;
+    }
 }
 
 @keyframes bigsmall{
@@ -71,6 +116,8 @@ body{
     -ms-animation: bigsmall 2s linear infinite;
     -o-animation: bigsmall 2s linear infinite;
     animation: bigsmall 2s linear infinite;
+
+   
 }
 
 
@@ -96,6 +143,19 @@ body{
         transform: translateX(-3rem);
       //  float: left;
         color: white;
+
+        @media (max-width:$bp1) {
+            font-size:  2rem;
+         }
+         @media (max-width:$bp2) {
+             font-size: 1.8rem;
+         }
+         @media (max-width:$bp3) {
+             font-size: 1.6rem;
+         }
+         @media (max-width:$bp4) {
+             font-size: 1.4rem;
+         }
     }
 }
 
@@ -123,6 +183,25 @@ body{
             color: $main1;
             font-size: 9rem;
             text-shadow: $main2 .2rem .2rem;
+
+
+            @media (max-width:$bp1) {
+               font-size:  7rem;
+            }
+            @media (max-width:$bp2) {
+                font-size: 6rem;
+            }
+            @media (max-width:$bp3) {
+                font-size: 5rem;
+            }
+            @media (max-width:$bp4) {
+                font-size: 4rem;
+            }
+            @media (max-width:$bp5) {
+                font-size: 7rem;
+            }
+            
+            
         }
         font-family: 'Kbdunktank';
         display: inline-block;
@@ -131,6 +210,23 @@ body{
         color: white;
         margin: 0;
         padding: 0;
+
+        @media (max-width:$bp1) {
+            font-size: 4rem;
+        }
+        @media (max-width:$bp2) {
+            font-size: 3rem;
+        }
+        @media (max-width:$bp3) {
+            font-size: 2.5rem;
+        }
+        @media (max-width:$bp4) {
+            font-size: 2.5rem;
+        }
+        @media (max-width:$bp5) {
+            font-size: 4rem;
+        }
+        
 
     }
 }
@@ -162,6 +258,7 @@ body{
     justify-items: center;
     align-items: center;
     display: grid;
+    
     grid-template-columns:2rem repeat(4,1fr) 2rem;
     grid-template-rows: repeat(4,1fr);
     grid-template-areas: 
@@ -169,6 +266,26 @@ body{
                         ". about-me . . skills ."
                         ". about-me click-info click-info skills ."
                         ". . projects projects . .";
+    @media (max-width:$bp2){
+        height: 85%;
+        width: auto;
+        // transform: translate(1rem,2rem);
+    }
+    @media (max-width:$bp3){
+        height: 80%;
+        width: auto;
+        transform: translate(0rem,1rem);
+    }
+    @media (max-width:$bp4){
+        height: 60%;
+        width: auto;
+      //  transform: translate(0rem,1rem);
+    }
+    @media (max-width:$bp5){
+        height: 80%;
+        width: 80%;
+        transform: translate(3rem,5.2rem);
+    }
 
 }
 
@@ -177,12 +294,25 @@ body{
     border-radius: 50%;
     perspective: 150rem;
     box-shadow: black .5rem 1rem 1rem ;
+    
     a{
         text-decoration: none;
         img{
             height: 3rem;
             width: auto;
             padding: .6rem;
+
+            @media (max-width:$bp2) {
+                height: 2rem;;
+            }
+            @media (max-width:$bp3){
+                height: 1.7rem;  
+            }
+            @media (max-width:$bp5){
+                height: 2.6rem;  
+            }
+        
+        
             &:hover{
                 cursor:pointer;
                 border-radius: 50%;
@@ -231,6 +361,13 @@ body{
         font-size: 2rem;
         color: white;
         text-shadow: black .3rem .3rem;
+
+        @media (max-width:$bp3){
+            font-size: 1.2rem;
+        }
+        @media (max-width:$bp3){
+            font-size: 1.8rem;
+        }
 
         &:hover{
             cursor: pointer;
