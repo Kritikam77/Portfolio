@@ -64,7 +64,20 @@ body{
                         ". bottom-head ."
                         ;
     }
-    
+    @media (max-width:$bp7) {
+        height: auto;
+        grid-template-columns:0% 1fr 0%;
+        grid-template-rows:2rem 3fr 5rem 5rem 1fr 2fr 1fr;
+        grid-template-areas: 
+                        ". . . "
+                        ". menu ."
+                        ". . ."
+                        ". . ."
+                        ". top-head ."
+                        ". h1-main  ."
+                        ". bottom-head ."
+                        ;
+    }
 
 }
 
@@ -116,8 +129,6 @@ body{
     -ms-animation: bigsmall 2s linear infinite;
     -o-animation: bigsmall 2s linear infinite;
     animation: bigsmall 2s linear infinite;
-
-   
 }
 
 
@@ -200,6 +211,9 @@ body{
             @media (max-width:$bp5) {
                 font-size: 7rem;
             }
+            @media (max-width:$bp7) {
+                font-size: 5rem;
+            }
             
             
         }
@@ -225,6 +239,9 @@ body{
         }
         @media (max-width:$bp5) {
             font-size: 4rem;
+        }
+        @media (max-width:$bp7) {
+            font-size: 3rem;
         }
         
 
