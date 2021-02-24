@@ -3,7 +3,8 @@ body {
   margin: 0;
   padding: 0;
   font-size: 62.5%;
-  overflow: auto; }
+  overflow-y: auto;
+  overflow-x: hidden; }
 
 @font-face {
   font-family: Kbdunktank;
@@ -39,6 +40,12 @@ body {
     .main {
       height: auto;
       grid-template-columns: 5% 1fr 5%;
+      grid-template-rows: 2rem 3fr 5rem 5rem 1fr 2fr 1fr;
+      grid-template-areas: ". . . " ". menu ." ". . ." ". . ." ". top-head ." ". h1-main  ." ". bottom-head ."; } }
+  @media (max-width: 450px) {
+    .main {
+      height: auto;
+      grid-template-columns: 0% 1fr 0%;
       grid-template-rows: 2rem 3fr 5rem 5rem 1fr 2fr 1fr;
       grid-template-areas: ". . . " ". menu ." ". . ." ". . ." ". top-head ." ". h1-main  ." ". bottom-head ."; } }
 
@@ -157,6 +164,9 @@ body {
       @media (max-width: 650px) {
         .h1-main span:first-child {
           font-size: 7rem; } }
+      @media (max-width: 450px) {
+        .h1-main span:first-child {
+          font-size: 5rem; } }
     @media (max-width: 980px) {
       .h1-main span {
         font-size: 4rem; } }
@@ -172,6 +182,9 @@ body {
     @media (max-width: 650px) {
       .h1-main span {
         font-size: 4rem; } }
+    @media (max-width: 450px) {
+      .h1-main span {
+        font-size: 3rem; } }
 
 .title-hover {
   cursor: pointer;
@@ -295,12 +308,20 @@ body {
 
 .about-me-page {
   background-color: #242323;
-  height: 100%;
-  width: 100%;
+  height: auto;
+  width: auto;
   display: grid;
   grid-template-columns: 5% 45% 45% 5%;
   grid-template-rows: 3rem 1fr 2fr 3rem;
   grid-template-areas: ". . . ." ". heading heading ." ". info info ." ". . . ."; }
+  @media (max-width: 980px) {
+    .about-me-page {
+      grid-template-columns: 0% 50% 50% 0%; } }
+  @media (max-width: 650px) {
+    .about-me-page {
+      grid-template-columns: 5% 1fr 5%;
+      grid-template-rows: 3rem 1fr 2fr 3rem;
+      grid-template-areas: ". .  ." ". heading ." ". info ." ". . ."; } }
 
 #canvas1 {
   height: 100%;
@@ -331,12 +352,25 @@ body {
 
 .info {
   grid-area: info;
-  font-size: 1.3rem;
+  font-size: 180%;
   color: white;
   display: grid;
   z-index: 3;
   grid-template-columns: 2rem 50% 50% 2rem;
   grid-template-areas: ". info1  info2"; }
+  @media (max-width: 980px) {
+    .info {
+      grid-template-columns: 1rem 1fr 2rem 1fr 1rem;
+      grid-template-areas: ". info1 . info2 ."; } }
+  @media (max-width: 840px) {
+    .info {
+      grid-template-columns: 0rem 1fr 1rem 1fr 1rem;
+      grid-template-areas: ". info1 . info2 ."; } }
+  @media (max-width: 650px) {
+    .info {
+      grid-template-columns: 1rem 1fr 1rem;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: ". info1 ."  ". info2 ."; } }
   .info span {
     color: #9acd32;
     text-shadow: black .1rem -.1rem;
@@ -424,11 +458,19 @@ body {
     text-decoration: none;
     font-size: 3rem;
     text-shadow: white .1rem .1rem 0rem;
-    padding: .7rem;
+    padding: 1rem;
     box-shadow: inset 0 0 0 0 #4c5699;
     -webkit-transition: ease-out 0.4s;
     -moz-transition: ease-out 0.4s;
     transition: ease-out 0.4s; }
+    @media (max-width: 840px) {
+      .project-list div a {
+        font-size: 2.5rem;
+        padding: .7rem; } }
+    @media (max-width: 650px) {
+      .project-list div a {
+        font-size: 2rem;
+        padding: .7rem; } }
     .project-list div a:hover {
       border-radius: 30%;
       color: #9acd32;
@@ -436,13 +478,18 @@ body {
       font-family: Kbzipadeedoodah; }
 
 .contactme {
-  height: 100vh;
+  height: auto;
   width: 100vw;
   background-color: black;
   display: grid;
   grid-template-columns: 5rem 2fr 5rem 1fr 1fr 5rem;
   grid-template-rows: 5rem 1fr 1fr 5rem;
   grid-template-areas: ". . . . . ." ". heading5 . contact-list contact-name ." ". lecture . contact-list contact-name ." ". . . . . ."; }
+  @media (max-width: 750px) {
+    .contactme {
+      grid-template-columns: 5rem 1fr 1fr 5rem;
+      grid-template-rows: 5rem 1fr  1fr 1fr 5rem;
+      grid-template-areas: ". . . ." ". heading5 heading5 ." ". lecture lecture ." ". contact-list contact-name ." ". . . ."; } }
 
 #canvas5 {
   z-index: 1; }
@@ -468,6 +515,24 @@ body {
       color: #4c5699;
       font-size: 6rem;
       text-shadow: #9acd32 0.2rem 0.2rem; }
+      @media (max-width: 980px) {
+        .heading5 span:first-child {
+          font-size: 5rem; } }
+      @media (max-width: 840px) {
+        .heading5 span:first-child {
+          font-size: 4rem; } }
+      @media (max-width: 750px) {
+        .heading5 span:first-child {
+          font-size: 5rem; } }
+    @media (max-width: 980px) {
+      .heading5 span {
+        font-size: 2.8rem; } }
+    @media (max-width: 840px) {
+      .heading5 span {
+        font-size: 2.5rem; } }
+    @media (max-width: 750px) {
+      .heading5 span {
+        font-size: 3rem; } }
 
 .lecture {
   z-index: 2;
@@ -514,6 +579,6 @@ body {
 
 @keyframes animate5 {
   0% {
-    transform: translate(10rem); }
+    transform: translate(100%); }
   100% {
-    transform: translate(-4rem); } }
+    transform: translate(-40%); } }

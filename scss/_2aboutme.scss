@@ -1,7 +1,7 @@
 .about-me-page{
     background-color: $bgcolor1;
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: auto;
 
     display: grid;
     grid-template-columns: 5% 45% 45% 5%;
@@ -11,6 +11,19 @@
                         ". heading heading ."
                         ". info info ."
                         ". . . .";
+    
+    @media (max-width:$bp1){
+        grid-template-columns: 0% 50% 50% 0%;
+    }
+    @media (max-width:$bp5){
+        grid-template-columns: 5% 1fr 5%;
+        grid-template-rows: 3rem 1fr 2fr 3rem;
+        grid-template-areas: 
+                        ". .  ."
+                        ". heading ."
+                        ". info ."
+                        ". . .";
+    }
 }
 
 
@@ -51,12 +64,28 @@
 
 .info{
     grid-area: info;
-    font-size: 1.3rem;
+    font-size: 180%;
     color: white;
     display: grid;
     z-index: 3;
     grid-template-columns:2rem 50% 50% 2rem;
     grid-template-areas:". info1  info2" ;
+
+    @media (max-width:$bp1){
+        grid-template-columns:1rem 1fr 2rem 1fr 1rem;
+        grid-template-areas:". info1 . info2 ." ;
+    }
+    @media (max-width:$bp2){
+        grid-template-columns:0rem 1fr 1rem 1fr 1rem;
+        grid-template-areas:". info1 . info2 ." ;
+    }
+    @media (max-width:$bp5){
+        grid-template-columns:1rem 1fr 1rem;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:". info1 ." 
+                            ". info2 .";
+    }
+    
 
     span{
         color: $main2;

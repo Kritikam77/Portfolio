@@ -1,5 +1,5 @@
 .contactme{
-    height: 100vh;
+    height: auto;
     width: 100vw;
     background-color: black;
     display: grid;
@@ -10,6 +10,18 @@
                         ". heading5 . contact-list contact-name ."
                         ". lecture . contact-list contact-name ."
                         ". . . . . .";
+
+    @media(max-width:750px){
+        grid-template-columns: 5rem 1fr 1fr 5rem;
+        grid-template-rows: 5rem 1fr  1fr 1fr 5rem;
+        grid-template-areas: 
+                        ". . . ."
+                        ". heading5 heading5 ."
+                        ". lecture lecture ."
+                        ". contact-list contact-name ."
+                        ". . . .";
+
+    }
 }
 
 #canvas5{
@@ -32,6 +44,16 @@
             color: $main1;
             font-size: 6rem;
             text-shadow: $main2 .2rem .2rem;
+
+            @media(max-width:$bp1){
+                font-size: 5rem;
+            }
+            @media(max-width:$bp2){
+                font-size: 4rem;
+            }
+            @media(max-width:750px){
+                font-size: 5rem;
+            }
         }
         font-family: 'Kbdunktank';
         display: inline-block;
@@ -40,6 +62,15 @@
         color: white;
         margin: 0;
         padding: 0;
+        @media(max-width:$bp1){
+            font-size: 2.8rem;
+        }
+        @media(max-width:$bp2){
+            font-size: 2.5rem;
+        }
+        @media(max-width:750px){
+            font-size: 3rem;
+        }
 
     }
 }
@@ -86,6 +117,7 @@
     font-family: Kbdunktank;
     color: white;
 
+
 }
 
 .add-to-hover{
@@ -101,10 +133,10 @@
 
 @keyframes animate5{
     0%{
-        transform: translate(10rem)
+        transform: translate(100%)
     }
 
     100%{
-        transform: translate(-4rem);
+        transform: translate(-40%);
     }
 }
