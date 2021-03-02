@@ -14,6 +14,11 @@ let title_hover=function (e){
 })
 }
 
+window.addEventListener('resize',function(){
+    canvas.height= document.body.clientHeight;
+    canvas.width= document.body.clientWidth;
+})
+
 for ( let items of title_array){
     title_hover(items);
 }
